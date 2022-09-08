@@ -2,14 +2,14 @@ const { ApolloServer, gql } = require("apollo-server");
 // import { SavingsAccount } from "./SavingsAccount";
 const accounts = [
   {
-    id: "12345",
+    id: 12345,
     name: "Ekip Kalir",
     accountNumberLastFour: 8,
     accountStatus: "ACTIVE",
     annualYield: 2.1,
   },
   {
-    id: "23456",
+    id: 23456,
     name: "Jenny Bottle",
     accountNumberLastFour: 5,
     accountStatus: "ACTIVE",
@@ -24,10 +24,10 @@ const typeDefs = gql`
 
   # This "Book" type defines the queryable fields for every book in our data source.
   type Account {
-    id: String
+    id: Int
     name: String
     accountNumberLastFour: Int
-    accountStatus:String
+    accountStatus: String
   }
 
   # The "Query" type is special: it lists all of the available queries that
@@ -35,6 +35,7 @@ const typeDefs = gql`
   # case, the "books" query returns an array of zero or more Books (defined above).
   type Query {
     accounts: [Account]
+    account(id:ID!): Account
   }
 `;
 
@@ -43,6 +44,7 @@ const typeDefs = gql`
 const resolvers = {
   Query: {
     accounts: () => accounts,
+    accounts: (_, args) => accounts.find(account => account.id == args.id)
   },
 };
 
