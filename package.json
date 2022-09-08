@@ -1,0 +1,17 @@
+{
+  "name": "gs-graphql-server",
+  "version": "1.0.0",
+  "description": "A starting GraphQL server project for GS Marcus Savings Feature ",
+  "main": "index.js",
+  "scripts": {
+    "watch":"nodemon ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ekip Kalir",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^3.10.2",
+    "graphql": "^16.6.0",
+    "nodemon": "^2.0.19"
+  }
+}
