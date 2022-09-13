@@ -15,6 +15,13 @@ const accounts = [
     accountStatus: "ACTIVE",
     annualYield: 2.3,
   },
+  {
+    id: 33656,
+    name: "Ben Boyle",
+    accountNumberLastFour: 2,
+    accountStatus: "ACTIVE",
+    annualYield: 2.2,
+  },
 ];
 // A schema is a collection of type definitions (hence "typeDefs")
 // that together define the "shape" of queries that are executed against
